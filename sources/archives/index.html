@@ -1,0 +1,12 @@
+---
+layout: page
+title: Blog Archives
+render: true
+---
+<div>
+    <ul>
+        <#list site.posts as post>
+            <li><a href="${root_url}${post.url}">${post.title}</a> <em>(${post.dateFormatted})</em></li>
+        </#list>
+    </ul>
+</div>

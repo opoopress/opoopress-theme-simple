@@ -1,0 +1,16 @@
+---
+layout: page
+title: Tags
+
+render: true
+---
+
+<#if site.tags?? &&  (site.tags?size > 0)>
+<div id="tag-archives">
+<ul >
+<#list site.tags as tag>
+	<#if (tag.pagesSize > 0)><li class="category"><a href="${root_url}${tag.url}">${tag.name}</a> (${tag.pagesSize})</li></#if>
+</#list>
+  </ul>
+ </div>
+</#if>

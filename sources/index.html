@@ -1,0 +1,26 @@
+---
+layout: default
+render: true
+
+pagination:
+    size: 10
+    collection: post
+    #permalink: /p${pageNumber}/
+    #title_suffix_format: " - 第 ${pageNumber} 页"
+---
+<#list paginator.items as post>
+			<a href="${root_url}${post.url}"><h1>${post.title}</h1></a>
+  			<p>${post.dateFormatted}</p>
+  			<p>${post.excerpt!post.convertedContent}</p>
+			<#if post.excerpted><p>...</p></#if>
+</#list>
+
+<hr />
+<nav>
+  <ul class="pager">
+    <#if (paginator.next)??><li class="previous"><a href="${root_url}${paginator.next.url}"><span aria-hidden="true">&larr;</span> Older</a></li></#if>
+    <#if (paginator.previous)??><li class="next"><a href="${root_url}${paginator.previous.url}">Newer <span aria-hidden="true">&rarr;</span></a></li></#if>
+  </ul>
+</nav>
+
+

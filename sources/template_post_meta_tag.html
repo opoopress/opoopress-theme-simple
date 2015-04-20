@@ -1,0 +1,23 @@
+---
+layout: default
+title: tag_template
+
+tag_template_post_tag: true
+category_template_post_category: true
+
+#title_prefix
+#permalink
+#output_dir
+#paginate
+
+
+render: true
+---
+<#list page.metaTag.pages as post>
+			<a href="${root_url}${post.url}"><h1>${post.title}</h1></a>
+  			<p>${post.dateFormatted}</p>
+  			<p>${post.excerpt!post.convertedContent}</p>
+			<#if post.excerpted><p>...</p></#if>
+</#list>
+
+
