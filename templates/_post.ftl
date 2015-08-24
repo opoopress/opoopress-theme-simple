@@ -31,4 +31,15 @@ ${content}
         <#if (page.next.url)??><li class="next"><a href="${root_url}${page.next.url}">${page.next.title} <span aria-hidden="true">&rarr;</span></a></li></#if>
       </ul>
     </nav>
+
+<#if page.related_posts?? && (page.related_posts?size > 0)>
+<hr />
+<h2>相关文章</h2>
+<ul>
+    <#list page.related_posts as p>
+        <li><a href="${p.url}">${p.title}</a></li>
+    </#list>
+</ul>
+</#if>
+
 <#include "/footer.ftl">

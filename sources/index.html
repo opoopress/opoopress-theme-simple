@@ -11,7 +11,7 @@ pagination:
 <#list paginator.items as post>
 			<a href="${root_url}${post.url}"><h1>${post.title}</h1></a>
   			<p>${post.dateFormatted}</p>
-  			<p>${post.excerpt!post.convertedContent}</p>
+  			<p>${post.excerpt}</p>
 			<#if post.excerpted><p>...</p></#if>
 </#list>
 
